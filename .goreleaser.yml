@@ -1,10 +1,10 @@
-project_name: {{ .PluginName }}
+project_name: krew-plugin-demo
 release:
   github:
-    owner: {{ .Owner }}
-    name: {{ .Repo }}
+    owner: ankithans
+    name: krew-plugin-demo
 builds:
-  - id: {{ .PluginName }}
+  - id: krew-plugin-demo
     goos:
     - linux
     - windows
@@ -17,12 +17,12 @@ builds:
       - GO111MODULE=on
     main: cmd/plugin/main.go
     ldflags: -s -w
-      -X github.com/{{ .Owner }}/{{ .Repo }}/pkg/version.version=
+      -X github.com/ankithans/krew-plugin-demo/pkg/version.version=
 archives:
-  - id: {{ .PluginName }}
+  - id: krew-plugin-demo
     builds:
-    - {{ .PluginName }}
-    name_template: {{ `"{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"` }}
+    - krew-plugin-demo
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
     - goos: windows
       format: zip

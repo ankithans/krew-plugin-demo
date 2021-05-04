@@ -1,4 +1,4 @@
-module github.com/replicatedhq/krew-plugin-template
+module github.com/ankithans/krew-plugin-demo
 
 go 1.12
 
